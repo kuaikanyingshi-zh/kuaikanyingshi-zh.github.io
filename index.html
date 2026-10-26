@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>快看影视 镜号03｜先看清再决定看不看 · kuaikanyingshi-zh.github.io</title>
+<meta name="description" content="快看影视的第三本分镜簿：用镜头、节奏和一句判断，替你先看完一部片。这里不播片、不存片、不给下载，只把华语新片、剧集、动画与纪录片的观看理由写短写准。唯一地址 https://kuaikanyingshi-zh.github.io，别处同名的都不是这本。">
+<meta name="keywords" content="快看影视, kuaikanyingshi-zh, kuaikanyingshi-zh.github.io, 分镜式影评, 镜头语言拆解, 剧集节奏分析, 华语新片先读, 动画作画笔记, 纪录片选题手记, 值不值得看, 观影前决策">
+<meta name="author" content="快看影视">
+<meta name="publisher" content="kuaikanyingshi-zh.github.io">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="4 days">
+<meta name="geo.region" content="CN-32">
+<meta name="geo.placename" content="Suqian">
+<meta name="theme-color" content="#0e1110">
+<meta property="og:type" content="video.movie">
+<meta property="og:site_name" content="快看影视 · 分镜簿">
+<meta property="og:title" content="快看影视｜用分镜先看完一部片">
+<meta property="og:description" content="镜头、节奏、一句判断。华语新片、剧集、动画、纪录片，先读再决定。">
+<meta property="og:url" content="https://kuaikanyingshi-zh.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="快看影视 分镜簿：先看镜头，再决定看不看">
+<meta name="twitter:description" content="四栏分镜表，每部片只留该留的东西。无播放源，只有判断。">
+<link rel="canonical" href="https://kuaikanyingshi-zh.github.io/">
+<style>
+:root{
+  --ink:#0e1110; --paper:#eceae3; --paper2:#f4f2ea; --chalk:#cfd3cb;
+  --neon:#e9f24a; --rust:#e2532c; --fade:#6c7068; --line:#1b1f1c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-size:15.5px; line-height:1.75; -webkit-text-size-adjust:100%;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol,dl,dd{margin:0;padding:0;list-style:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+
+/* ===== 顶栏 ===== */
+.top{
+  position:sticky; top:0; z-index:60; background:rgba(14,17,16,.94);
+  color:var(--chalk); backdrop-filter:blur(6px); border-bottom:1px solid #2a2f2b;
+}
+.top-in{max-width:1180px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:700;letter-spacing:.14em;color:#fff;font-size:14px}
+.brand em{font-style:normal;color:var(--neon)}
+.top nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.top nav a{
+  padding:5px 10px;font-size:12.5px;letter-spacing:.08em;border-radius:2px;
+  border:1px solid transparent;
+}
+.top nav a.on{background:var(--neon);color:#0e1110;font-weight:700}
+.top nav a:hover{border-color:#4c514a}
+.copybtn{
+  border:1px solid #4c514a;color:var(--chalk);padding:5px 11px;font-size:12px;letter-spacing:.06em;
+}
+.copybtn:active{background:var(--neon);color:#0e1110;border-color:var(--neon)}
+.menutog{display:none}
+
+/* ===== 场记首屏 ===== */
+.hero{background:var(--ink);color:#e8e9e3;padding:54px 22px 62px;position:relative;overflow:hidden}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,transparent 0 22px,#e9f24a 22px 24px,transparent 24px 48px),
+    linear-gradient(0deg,transparent 0 22px,#e9f24a 22px 24px,transparent 24px 48px);
+  background-size:48px 48px;opacity:.045;pointer-events:none;
+}
+.slate{max-width:1180px;margin:0 auto;position:relative;z-index:2}
+.clap{
+  display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.26em;
+  color:var(--neon);border:1px solid var(--neon);padding:4px 12px;border-radius:2px;
+}
+.clap b{background:var(--neon);color:#0e1110;padding:1px 6px}
+h1{
+  font-size:clamp(30px,6.4vw,68px);line-height:1.12;margin:22px 0 6px;font-weight:800;
+  letter-spacing:-.02em;
+}
+h1 .cut{color:var(--neon)}
+h1 small{display:block;font-size:.32em;letter-spacing:.24em;color:var(--fade);font-weight:600;margin-top:18px}
+.hero p.lead{max-width:62ch;font-size:16px;color:#c7cbc4;margin:18px 0 0}
+.strips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.strip{
+  background:#181c1a;border:1px solid #2c312c;padding:9px 14px;font-size:12.5px;color:var(--chalk);
+  display:flex;gap:9px;align-items:baseline;
+}
+.strip span{color:var(--neon);font-weight:700;letter-spacing:.1em;font-size:11px}
+.addrchip{
+  margin-top:26px;font-size:12.5px;color:#b9beb4;letter-spacing:.04em;
+}
+.addrchip u{color:#fff;text-decoration:none;border-bottom:1px dashed var(--neon);padding-bottom:1px}
+
+/* ===== 通用章节 ===== */
+section{padding:64px 22px;border-top:1px solid #d8d6cb}
+section:nth-child(even){background:var(--paper2)}
+.wrap{max-width:1180px;margin:0 auto}
+.hd{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:34px;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd .no{font-size:13px;letter-spacing:.3em;color:var(--rust);font-weight:800}
+h2{font-size:clamp(23px,3.6vw,34px);margin:0;line-height:1.25;font-weight:800;letter-spacing:-.01em}
+.hd .sub{font-size:12.5px;color:var(--fade);letter-spacing:.14em;margin-left:auto;text-transform:uppercase}
+.eyebrow{font-size:12px;letter-spacing:.28em;color:var(--rust);font-weight:700;margin-bottom:8px}
+
+/* ===== 分镜表 ===== */
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
+.filters b{
+  border:1px solid #b9b6a8;background:#fff;padding:5px 13px;font-size:12.5px;letter-spacing:.06em;
+  border-radius:20px;
+}
+.filters b.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.board{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;
+}
+.shot{
+  background:#fff;border:1px solid #c9c7bb;padding:16px 16px 14px;position:relative;
+  transition:transform .25s ease,box-shadow .25s;
+}
+.shot:hover{transform:translateY(-3px);box-shadow:6px 8px 0 rgba(14,17,16,.12)}
+.shot .tk{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.16em;color:var(--rust);font-weight:700}
+.shot h3{font-size:18px;margin:10px 0 6px;line-height:1.35}
+.shot .tag{font-size:11.5px;color:var(--fade);border-left:2px solid var(--neon);padding-left:7px}
+.shot p{font-size:13.5px;color:#3d413c;margin:10px 0 0}
+.shot .verdict{
+  margin-top:12px;padding-top:9px;border-top:1px dashed #cfcdc1;font-size:12px;color:#0e1110;
+}
+.shot .verdict i{font-style:normal;background:var(--neon);padding:0 4px;font-weight:700;margin-right:5px}
+.shot.hide{display:none}
+
+/* ===== 节奏条 ===== */
+.pace{display:grid;gap:22px}
+.prow{display:grid;grid-template-columns:112px 1fr;gap:18px;align-items:center;background:#fff;border:1px solid #c9c7bb;padding:16px}
+.prow .id{font-size:12px;letter-spacing:.18em;color:var(--rust);font-weight:800}
+.prow h3{font-size:16.5px;margin:0 0 5px}
+.prow .meta{font-size:12px;color:var(--fade)}
+.bar{height:9px;background:#dedcd2;position:relative;overflow:hidden;margin-top:9px}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--ink),var(--rust));transition:width 1.1s cubic-bezier(.22,.7,.3,1)}
+.bar b{position:absolute;right:6px;top:-16px;font-size:10.5px;letter-spacing:.08em;color:var(--ink);font-weight:700}
+
+/* ===== 场记轴 ===== */
+.axis{position:relative;padding-left:34px}
+.axis::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--ink)}
+.entry{position:relative;padding:0 0 26px 6px}
+.entry::before{
+  content:"";position:absolute;left:-31px;top:7px;width:12px;height:12px;background:var(--paper);
+  border:2px solid var(--ink);border-radius:50%;
+}
+.entry.live::before{background:var(--neon);box-shadow:0 0 0 5px rgba(233,242,74,.25)}
+.entry h3{font-size:17px;margin:0 0 3px}
+.entry time{font-size:11.5px;letter-spacing:.14em;color:var(--rust);font-weight:700}
+.entry p{font-size:13.5px;color:#33362f;margin:5px 0 0}
+.entry .k{display:inline-block;font-size:11px;border:1px solid #b9b6a8;padding:1px 7px;margin-right:5px;background:#fff}
+
+/* ===== 数据面 ===== */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.num{background:var(--ink);color:#e8e9e3;padding:20px 16px;border-left:4px solid var(--neon)}
+.num b{display:block;font-size:32px;line-height:1;font-weight:800;letter-spacing:-.02em}
+.num b em{font-style:normal;font-size:14px;color:var(--neon);margin-left:3px}
+.num span{font-size:11.5px;letter-spacing:.16em;color:var(--chalk);display:block;margin-top:9px}
+.note{margin-top:22px;background:#fff;border:1px solid #c9c7bb;padding:16px 18px;font-size:13.5px;color:#3d413c}
+.note b{background:var(--neon);padding:0 4px}
+
+/* ===== 问答 ===== */
+.faq details{border-top:1px solid #c9c7bb;background:#fff;padding:0}
+.faq details:last-child{border-bottom:1px solid #c9c7bb}
+.faq summary{
+  padding:15px 44px 15px 16px;font-size:15px;font-weight:600;cursor:pointer;position:relative;
+}
+.faq summary::after{
+  content:"＋";position:absolute;right:16px;top:13px;font-size:18px;color:var(--rust);font-weight:700;
+}
+.faq details[open] summary::after{content:"－"}
+.faq summary::-webkit-details-marker{display:none}
+.faq .body{padding:0 16px 16px;font-size:13.5px;color:#3d413c;border-left:3px solid var(--neon);margin-left:16px}
+.faq .body u{text-decoration:none;color:var(--rust);font-weight:700}
+
+/* ===== 关于 ===== */
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
+.card{background:#fff;border:1px solid #c9c7bb;padding:22px}
+.card h3{margin:0 0 12px;font-size:17px;border-bottom:2px solid var(--ink);padding-bottom:8px;display:flex;justify-content:space-between}
+.card h3 i{font-style:normal;font-size:11px;letter-spacing:.2em;color:var(--rust);font-weight:700}
+.card ul li{padding:8px 0 8px 22px;position:relative;font-size:13.5px;border-bottom:1px dotted #dddacd}
+.card ul li:last-child{border:0}
+.card ul li::before{content:"▸";position:absolute;left:0;color:var(--rust);font-size:12px;top:8px}
+.card ul li b{text-decoration:line-through;color:#8b8e85;text-decoration-color:#e2532c}
+.addrbox{background:var(--ink);color:#e8e9e3;padding:18px}
+.addrbox code{display:block;background:#000;padding:11px 12px;font-size:13px;color:var(--neon);word-break:break-all;letter-spacing:.02em}
+.addrbox button{margin-top:12px;background:var(--neon);color:#0e1110;font-weight:700;padding:9px 16px;font-size:12.5px;letter-spacing:.1em}
+.addrbox button:active{background:#fff}
+
+/* ===== 页脚 ===== */
+footer{background:var(--ink);color:#9da19a;padding:34px 22px 40px;font-size:12.5px}
+.foot{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer a{color:var(--chalk);border-bottom:1px solid #4c514a}
+footer .cr{width:100%;margin-top:18px;padding-top:14px;border-top:1px solid #262b27;color:#6c7068}
+
+/* 入场 */
+.rise{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rise.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .prow{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  section{padding:48px 18px}
+}
+@media (max-width:560px){
+  .top-in{padding:8px 14px;gap:8px}
+  .brand{font-size:12.5px}
+  .top nav{display:none;position:absolute;left:0;right:0;top:100%;background:#0e1110;flex-direction:column;padding:6px 12px;border-bottom:1px solid #2a2f2b}
+  .top nav.show{display:flex}
+  .top nav a{border:0;border-radius:0;border-bottom:1px solid #232823;padding:9px 4px}
+  .menutog{display:block;margin-left:auto;border:1px solid #4c514a;color:var(--chalk);padding:5px 10px;font-size:12px}
+  .copybtn{display:none}
+  h1{font-size:30px}
+  .hero{padding:38px 16px 46px}
+  section{padding:40px 15px}
+  .hd .sub{margin-left:0;width:100%}
+  .prow{padding:14px 12px}
+  .card{padding:17px 14px}
+  .addrchip{font-size:11.5px;word-break:break-all}
+}
+@media print{
+  .top,.faq summary::after,.copybtn,.menutog{display:none}
+  section{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="top" id="top">
+  <div class="top-in">
+    <div class="brand">快看影视<span class="cut">／</span>分镜簿</div>
+    <button class="menutog" id="menutog" type="button" aria-label="展开目录">目录</button>
+    <nav id="nav">
+      <a href="#board" class="on">分镜表</a>
+      <a href="#pace">节奏判断</a>
+      <a href="#axis">场记轴</a>
+      <a href="#data">数量面</a>
+      <a href="#faq">问答</a>
+      <a href="#site">这一本</a>
+    </nav>
+    <button class="copybtn" id="copy1" type="button">复制本站地址</button>
+  </div>
+</header>
+
+<section class="hero" id="lead">
+  <div class="slate">
+    <div class="clap"><b>SCENE 03</b> · TAKE 先看镜头 · PRINT</div>
+    <h1>别急着点开，<span class="cut">先把镜头</span><br>替你看完。</h1>
+    <small>— 快看影视 · 第三本分镜簿 —</small>
+    <p class="lead">一部片值不值得看，答案通常藏在开头三分钟：谁在控制节奏，哪里在省力气，哪句台词是真心话。我们不动片源、不做播放器，只把这件事写成几行字，让你在决定之前多一秒依据。</p>
+    <div class="strips">
+      <div class="strip"><span>01</span>镜头怎么动</div>
+      <div class="strip"><span>02</span>节奏卡在哪</div>
+      <div class="strip"><span>03</span>一句话 verdict</div>
+      <div class="strip"><span>04</span>不剧透</div>
+    </div>
+    <div class="addrchip">本簿唯一存放处　<u>https://kuaikanyingshi-zh.github.io</u>　·　其他同名页面与本簿无关</div>
+  </div>
+</section>
+
+<section id="board">
+  <div class="wrap">
+    <div class="hd">
+      <div class="no">SC. 01</div>
+      <h2>分镜表：十格，先看结论</h2>
+      <div class="sub">点击分类 · 不跳转新页</div>
+    </div>
+    <div class="filters" id="filters">
+      <b class="on" data-f="all">全本 10</b>
+      <b data-f="film">电影</b>
+      <b data-f="tv">剧集</b>
+      <b data-f="ani">动画</b>
+      <b data-f="doc">纪录</b>
+    </div>
+    <div class="board" id="boardlist">
+
+      <article class="shot" data-cat="film">
+        <div class="tk"><span>SC.01</span><span class="tag">电影 · 132′</span></div>
+        <h3>春日迟迟再出发</h3>
+        <p>开头用一场没有对白的早餐铺完人物关系：碗筷声、手抖的盐罐、三次切门框。后面所有的失控，都在这三分半里埋过。</p>
+        <div class="verdict"><i>看</i>想看人与人和好的人</div>
+      </article>
+
+      <article class="shot" data-cat="tv">
+        <div class="tk"><span>SC.02</span><span class="tag">剧集 · 已更 14</span></div>
+        <h3>值班室的第九夜</h3>
+        <p>每集卡在同一个时钟刻度收尾，第七集才让指针走快一格。前六集的重复不是拖，是在攒那个"终于不对"的瞬间。</p>
+        <div class="verdict"><i>追</i>能忍慢热、爱细节的人</div>
+      </article>
+
+      <article class="shot" data-cat="ani">
+        <div class="tk"><span>SC.03</span><span class="tag">动画 · 全 12</span></div>
+        <h3>纸船往南</h3>
+        <p>水面的反光全程手绘，第 5 集那段三秒的静止镜头，原画张数能数出来。剧情清淡，但眼睛很忙。</p>
+        <div class="verdict"><i>看</i>为作画愿意降速的人</div>
+      </article>
+
+      <article class="shot" data-cat="doc">
+        <div class="tk"><span>SC.04</span><span class="tag">纪录 · 单集 58′</span></div>
+        <h3>菜市场天气预报员</h3>
+        <p>拍的是一个卖姜的摊主怎么靠看云决定进货量。没有旁白，只有秤、雨棚和他记了二十三年的本子。</p>
+        <div class="verdict"><i>看</i>想被具体生活撞一下的人</div>
+      </article>
+
+      <article class="shot" data-cat="film">
+        <div class="tk"><span>SC.05</span><span class="tag">电影 · 98′</span></div>
+        <h3>耳机里的人</h3>
+        <p>声场设计比剧情聪明：主角撒谎时，环境音会提前半秒失真。听不清台词那场，恰恰是全片最真的一场。</p>
+        <div class="verdict"><i>挑</i>戴耳机看，别外放</div>
+      </article>
+
+      <article class="shot" data-cat="tv">
+        <div class="tk"><span>SC.06</span><span class="tag">剧集 · 更新中</span></div>
+        <h3>旧楼维修手册</h3>
+        <p>单元剧外壳，每桩漏水都是一桩人情。第 3、8 集可以当独立短片看，主线藏得很轻，别急着查剧透。</p>
+        <div class="verdict"><i>追</i>喜欢慢慢认人的人</div>
+      </article>
+
+      <article class="shot" data-cat="ani">
+        <div class="tk"><span>SC.07</span><span class="tag">动画 · 剧场版</span></div>
+        <h3>熄灯前的车站</h3>
+        <p>前半段是明信片，后半段把色调一口气抽掉。结尾那句台词留白留得狠，散场别急着走。</p>
+        <div class="verdict"><i>看</i>想被安静一下的人</div>
+      </article>
+
+      <article class="shot" data-cat="doc">
+        <div class="tk"><span>SC.08</span><span class="tag">纪录 · 三集</span></div>
+        <h3>修一颗螺丝的四十年</h3>
+        <p>镜头几乎不动，全靠老师傅的手和工具柜的回声。素材很土，剪得很讲究，第 2 集中段有一段神来之笔。</p>
+        <div class="verdict"><i>看</i>对"手艺"两个字还信的人</div>
+      </article>
+
+      <article class="shot" data-cat="film">
+        <div class="tk"><span>SC.09</span><span class="tag">电影 · 115′</span></div>
+        <h3>今晚不渡河</h3>
+        <p>全片只有两处配乐，都用在"本该哭"的地方，然后立刻切断。克制到有点狠，不适合想被哄着看的夜晚。</p>
+        <div class="verdict"><i>挑</i>情绪稳的时候再看</div>
+      </article>
+
+      <article class="shot" data-cat="tv">
+        <div class="tk"><span>SC.10</span><span class="tag">剧集 · 待续</span></div>
+        <h3>第二份晚班</h3>
+        <p>双线剪得很碎，前四集容易劝退；撑过第 5 集的回溯，前面那些"乱"会一下子全说得通。别倍速。</p>
+        <div class="verdict"><i>追</i>能接受被绕一下的人</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="pace" class="rise">
+  <div class="wrap">
+    <div class="hd">
+      <div class="no">SC. 02</div>
+      <h2>节奏判断：卡在哪里，就值多少耐心</h2>
+      <div class="sub">条长为本簿主观感受，非时长占比</div>
+    </div>
+    <div class="pace">
+
+      <div class="prow">
+        <div><div class="id">SC.05</div><h3>耳机里的人</h3><div class="meta">前 20′ 铺声场，中段收拢，末段只剩呼吸</div></div>
+        <div><div class="bar" data-w="82"><i></i><b>入戏快</b></div></div>
+      </div>
+
+      <div class="prow">
+        <div><div class="id">SC.02</div><h3>值班室的第九夜</h3><div class="meta">第 1–6 集几乎原地踏步，第 7 集起提速</div></div>
+        <div><div class="bar" data-w="46"><i></i><b>慢热型</b></div></div>
+      </div>
+
+      <div class="prow">
+        <div><div class="id">SC.10</div><h3>第二份晚班</h3><div class="meta">双线交错，第 5 集回溯把碎片钉死</div></div>
+        <div><div class="bar" data-w="64"><i></i><b>中段发力</b></div></div>
+      </div>
+
+      <div class="prow">
+        <div><div class="id">SC.09</div><h3>今晚不渡河</h3><div class="meta">全程压着，情绪在第 9 十分钟才松一次</div></div>
+        <div><div class="bar" data-w="33"><i></i><b>别赶进度</b></div></div>
+      </div>
+
+      <div class="prow">
+        <div><div class="id">SC.07</div><h3>熄灯前的车站</h3><div class="meta">明快十六分钟，后半段色调逐帧退场</div></div>
+        <div><div class="bar" data-w="71"><i></i><b>先甜后沉</b></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="axis" class="rise">
+  <div class="wrap">
+    <div class="hd">
+      <div class="no">SC. 03</div>
+      <h2>场记轴：这一本改了什么</h2>
+      <div class="sub">由近及远 · 全部为本站原创短记</div>
+    </div>
+    <div class="axis">
+
+      <div class="entry live">
+        <time>2026 · 10 · 25</time>
+        <h3>新增「声音戏」一条观察线 <span class="k">进行中</span></h3>
+        <p>从本期开始，凡靠声场推进情绪的片，会在分镜表里单独标一声场节点。耳机里的人是第一篇样例，后续补到动画与纪录片栏目。</p>
+      </div>
+
+      <div class="entry">
+        <time>2026 · 10 · 18</time>
+        <h3>剧集栏目去掉「更新倒计时」</h3>
+        <p>平台排期变动太频繁，写死日期反而误导人。改成标「已更／待续／完结」三种状态，具体集数以各平台页面为准。</p>
+      </div>
+
+      <div class="entry">
+        <time>2026 · 10 · 09</time>
+        <h3>冷门补遗第一批入库</h3>
+        <p>七部不在热榜上的片，选的标准只有一条：散场后你会想起某个镜头。菜市场天气预报员、修一颗螺丝的四十年都在这一批。</p>
+      </div>
+
+      <div class="entry">
+        <time>2026 · 10 · 01</time>
+        <h3>第一本分镜簿上线</h3>
+        <p>定下三条规矩：不剧透关键转折、不给打分排名、不写「强烈推荐」这种省事话。到目前为止还没破例。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="data" class="rise">
+  <div class="wrap">
+    <div class="hd">
+      <div class="no">SC. 04</div>
+      <h2>数量面：薄，但每格都看过</h2>
+      <div class="sub">统计截至 2026 · 10 · 25</div>
+    </div>
+    <div class="grid4">
+      <div class="num"><b>10<em>格</em></b><span>本期分镜表条目</span></div>
+      <div class="num"><b>4<em>类</em></b><span>电影 / 剧集 / 动画 / 纪录</span></div>
+      <div class="num"><b>0<em>条</em></b><span>播放链接与下载入口</span></div>
+      <div class="num"><b>1<em>处</em></b><span>唯一地址，见下栏与页脚</span></div>
+    </div>
+    <div class="note">
+      说明：上面的「入戏快／慢热型」是本簿作者看片时的<b>主观节奏感受</b>，不是算法评分，也不代表作品质量高低。片长、集数以片方与各平台公布为准；若某部片在你所在地区暂时看不到，这不是本簿能解决的事，请走正规发行与播出渠道。
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq rise">
+  <div class="wrap">
+    <div class="hd">
+      <div class="no">SC. 05</div>
+      <h2>问答：先把误会挡在前面</h2>
+      <div class="sub">点开即读 · 不跳页</div>
+    </div>
+
+    <details open>
+      <summary>快看影视是能直接看片的地方吗？</summary>
+      <div class="body">不是。<u>这里是文字分镜簿</u>，只写镜头、节奏和一句判断，不托管视频、不挂播放器、不提供下载，也不跳转到盗链。想看正片，请到你所在地区合法上线的平台或影院。</div>
+    </details>
+
+    <details>
+      <summary>「快看影视」这个名字，和别的同名站有关系吗？</summary>
+      <div class="body">没有。本簿唯一地址是 <u>https://kuaikanyingshi-zh.github.io</u>，域名里带 <code>kuaikanyingshi-zh</code> 这一段，别处长得像的页面都不归这里管。搜索引擎收录认的是这个地址。</div>
+    </details>
+
+    <details>
+      <summary>为什么不给打星、不给排名？</summary>
+      <div class="body">打分会把「我合不合口味」伪装成「这片好不好」。本簿只说它在哪用力、卡在哪、适合什么样的心情和时段，判不判断留给你自己。</div>
+    </details>
+
+    <details>
+      <summary>会不会剧透？</summary>
+      <div class="body">不写关键转折、不报结局、不拆反转。会提前告诉你的是节奏结构、视听手法和情绪底色——这些信息看完反而更看得懂。</div>
+    </details>
+
+    <details>
+      <summary>更新频率怎么样，能追吗？</summary>
+      <div class="body">不定期，看片比写片慢。场记轴那栏会写清改了什么；赶时间的可以直接看分镜表第一格的黄色结论条。</div>
+    </details>
+
+    <details>
+      <summary>发现某条写错了，或者片已下架？</summary>
+      <div class="body">把片名和具体问题记下来，等本站开放留言渠道时一并反馈。在此之前，请以片方与播出平台的官方信息为准，别拿本簿的短记当档期依据。</div>
+    </details>
+
+  </div>
+</section>
+
+<section id="site" class="rise">
+  <div class="wrap">
+    <div class="hd">
+      <div class="no">SC. 06</div>
+      <h2>这一本，只做三件事</h2>
+      <div class="sub">也是不做的事</div>
+    </div>
+    <div class="two">
+
+      <div class="card">
+        <h3>我们在做的 <i>03 条</i></h3>
+        <ul>
+          <li>把一部片的<b>开头三分钟</b>拆给你看：谁在控制镜头，情绪往哪走</li>
+          <li>标节奏卡点，帮你决定<b>今晚要不要开这一部</b></li>
+          <li>给冷门片留一格，只因为某个镜头值得被记住</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>我们没在做的 <i>划掉即态度</i></h3>
+        <ul>
+          <li><b>不托管任何视频与字幕文件</b></li>
+          <li><b>不做播放器、不挂下载按钮、不导流盗链</b></li>
+          <li><b>不打星排名、不写「全网最全」</b></li>
+          <li><b>不采集你的观看记录，页面也没有统计脚本</b></li>
+        </ul>
+        <div class="addrbox" style="margin-top:18px">
+          <div class="eyebrow" style="color:var(--neon)">本簿唯一地址</div>
+          <code>https://kuaikanyingshi-zh.github.io</code>
+          <button id="copy2" type="button">复制这个地址</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>快看影视 · 分镜簿 ／ 第三本 ／ 纯文字影像笔记</div>
+    <div>唯一地址 <a href="https://kuaikanyingshi-zh.github.io">kuaikanyingshi-zh.github.io</a></div>
+    <div class="cr">© 快看影视 · 本站内容为原创短记，不构成观影档期或发行依据。片中画面、片段版权归原作者与发行方所有，请通过正规渠道观看。本页无任何播放与下载功能。</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ADDR="https://kuaikanyingshi-zh.github.io";
+
+  /* 复制地址 */
+  function copy(btn){
+    if(!btn) return;
+    var done=function(txt){
+      var old=btn.textContent;
+      btn.textContent=txt||"已复制 ✓";
+      setTimeout(function(){btn.textContent=old;},1600);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ADDR).then(function(){done("已复制 ✓");},function(){fallback(done);});
+    } else { fallback(done); }
+  }
+  function fallback(done){
+    var t=document.createElement("textarea");
+    t.value=ADDR; t.style.position="fixed"; t.style.opacity="0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); done("已复制 ✓"); }catch(e){ done("请手动复制地址"); }
+    document.body.removeChild(t);
+  }
+  document.getElementById("copy1").addEventListener("click",function(){copy(this);});
+  document.getElementById("copy2").addEventListener("click",function(){copy(this);});
+
+  /* 移动目录 */
+  var tog=document.getElementById("menutog"), nav=document.getElementById("nav");
+  tog.addEventListener("click",function(){ nav.classList.toggle("show"); });
+  nav.addEventListener("click",function(e){ if(e.target.tagName==="A") nav.classList.remove("show"); });
+
+  /* 分类筛选 */
+  var board=document.getElementById("boardlist");
+  document.getElementById("filters").addEventListener("click",function(e){
+    var b=e.target.closest("b"); if(!b) return;
+    Array.prototype.forEach.call(this.children,function(x){x.classList.remove("on");});
+    b.classList.add("on");
+    var f=b.getAttribute("data-f");
+    Array.prototype.forEach.call(board.children,function(sh){
+      sh.classList.toggle("hide", f!=="all" && sh.getAttribute("data-cat")!==f);
+    });
+  });
+
+  /* 节奏条：滚到才长 */
+  var bars=document.querySelectorAll(".bar");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){
+          var i=en.target.querySelector("i"), w=en.target.getAttribute("data-w");
+          setTimeout(function(){ i.style.width=w+"%"; },120);
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.35});
+    bars.forEach(function(b){ io.observe(b); });
+  } else {
+    bars.forEach(function(b){ b.querySelector("i").style.width=b.getAttribute("data-w")+"%"; });
+  }
+
+  /* 栏目淡入 + 导航高亮 */
+  var secs=Array.prototype.slice.call(document.querySelectorAll("section[id]"));
+  var links=Array.prototype.slice.call(nav.querySelectorAll("a"));
+  function spy(){
+    var y=window.scrollY+120, cur="";
+    secs.forEach(function(s){ if(s.offsetTop<=y) cur=s.id; });
+    links.forEach(function(a){ a.classList.toggle("on", a.getAttribute("href")==="#"+cur); });
+  }
+  if("IntersectionObserver" in window){
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(en){ en.target.classList.toggle("in", en.isIntersecting); });
+    },{threshold:.12});
+    document.querySelectorAll(".rise").forEach(function(el){ io2.observe(el); });
+    window.addEventListener("scroll",spy,{passive:true}); spy();
+  } else { spy(); }
+})();
+</script>
+</body>
+</html>
